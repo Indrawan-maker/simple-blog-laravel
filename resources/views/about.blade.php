@@ -13,7 +13,7 @@
     this is about page
     <h3>owner: {{ $name }}</h3>
     <a href="/"></a>
-    <a href="/about"></a>
+    <a href="/about"></a> 
     <script src="js/script.js"></script>
 </body>
 </html>
