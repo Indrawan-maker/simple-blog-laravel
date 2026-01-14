@@ -8,34 +8,70 @@
     <title>Document</title>
 </head>
 <body>
-<div class="navbar bg-base-100 shadow-sm">
-  <!-- Brand / Logo -->
+<div class="navbar bg-base-100 shadow-sm px-2 md:px-8">
+  <img class="w-12 h-12" src="{{ asset('images/logo.png') }}" alt="logo">
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl">daisyUI</a>
+    <a href="/" class="btn btn-ghost text-sm md:text-xl">daisyUI</a>
   </div>
 
   <!-- Menu Tengah -->
-  <ul class="menu lg:menu-horizontal bg-base-200 rounded-box mx-auto">
-    <li><a>Item 1</a></li>
+  <ul class="menu-horizontal menu lg:menu-horizontal bg-base-180  lg:bg-base-180 rounded-box mx-auto">
+    <li><a href="/">Home</a></li>
     <li>
       <details class="ease-in-out duration-300 ">
-        <summary>Parent item</summary>
+        <summary>Fakultas</summary>
         <ul>
-          <li><a>Submenu 1</a></li>
-          <li><a>Submenu 2</a></li>
+          <li><a>Ushuluddin Adab dan Dakwah(FUAD)</a></li>
+          <li><a>Syariah(FASYA)</a></li>
+          <li><a>Ekonomi dan Bisnis Islam(FEBI)</a></li>
+          <li><a>Syariah(FASYA)</a></li>
           <li>
-            <details open>
-              <summary>Parent</summary>
-              <ul>
-                <li><a>item 1</a></li>
-                <li><a>item 2</a></li>
-              </ul>
+            <details>
+              <summary>Jurusan</summary>
+<ul>
+  <!-- ===== S1 ===== -->
+  <li><a>S1 Hukum Keluarga (Ahwal Syakhsiyah)</a></li>
+  <li><a>S1 Hukum Ekonomi Syariah (Muamalah)</a></li>
+  <li><a>S1 Hukum Tata Negara (Siyasah)</a></li>
+
+  <li><a>S1 Komunikasi dan Penyiaran Islam</a></li>
+  <li><a>S1 Manajemen Dakwah</a></li>
+  <li><a>S1 Ilmu Al-Qur'an dan Tafsir</a></li>
+  <li><a>S1 Ilmu Hadis</a></li>
+  <li><a>S1 Bimbingan dan Konseling Islam</a></li>
+
+  <li><a>S1 Pendidikan Agama Islam (PAI)</a></li>
+  <li><a>S1 Manajemen Pendidikan Islam</a></li>
+  <li><a>S1 Pendidikan Guru Madrasah Ibtidaiyah (PGMI)</a></li>
+  <li><a>S1 Pendidikan Islam Anak Usia Dini (PIAUD)</a></li>
+  <li><a>S1 Pendidikan Bahasa Arab</a></li>
+  <li><a>S1 Tadris Bahasa Inggris</a></li>
+  <li><a>S1 Tadris Matematika</a></li>
+  <li><a>S1 Tadris Biologi</a></li>
+
+  <li><a>S1 Ekonomi Syariah</a></li>
+  <li><a>S1 Perbankan Syariah</a></li>
+  <li><a>S1 Manajemen Bisnis Syariah</a></li>
+
+  <li><a>S1 Sistem Informasi</a></li>
+
+
+  <li><a>S2 Ekonomi Syariah</a></li>
+  <li><a>S2 Hukum Keluarga (Ahwal Syakhsiyah)</a></li>
+  <li><a>S2 Ilmu Al-Qur'an dan Tafsir</a></li>
+  <li><a>S2 Pendidikan Islam Anak Usia Dini</a></li>
+  <li><a>S2 Manajemen Pendidikan Islam</a></li>
+  <li><a>S2 Komunikasi dan Penyiaran Islam</a></li>
+
+ 
+  <li><a>S3 Pendidikan Agama Islam</a></li>
+</ul>
             </details>
           </li>
         </ul>
       </details>
     </li>
-    <li><a>Item 3</a></li>
+    <li><a href="/blog">Blog</a></li>
   </ul>
 
   <!-- Avatar / Dropdown kanan -->
@@ -63,8 +99,9 @@
     </div>
   </div>
 </div>
-
-    <h1>{{ $judul }}</h1>
-    <p>{{ $isi }}</p>
+<main class="px-2 md:px-8">
+  <h1>{{ $judul }}</h1>
+  <p>{{ $isi }}</p>
+</main>
 </body>
 </html>
