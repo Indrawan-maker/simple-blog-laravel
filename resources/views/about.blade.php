@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">    
-
-    <title>Document</title>
-</head>
-<body>
-    <h1>test about</h1>
-    this is about page
-    {{-- <h3>owner: {{ $name }}</h3> --}}
-    <a href="/"></a>
-    <a href="/about"></a> 
-    <script src="js/script.js"></script>
-</body>
-</html>
+<x-layout>
+ <x-slot:title>{{ $title }}</x-slot:title>
+  <h1 class="text-xl"></h1>
+</x-layout>
