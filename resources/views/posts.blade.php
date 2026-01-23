@@ -41,7 +41,6 @@
                 <div class="p-1">
                     <h2 class="font-bold text-sm cursor-pointer hover:underline">
                         <a href="/posts/{{ $new['id'] }}">
-                            
                             {{ $new['title'] }}
                         </a>
                     </h2>
