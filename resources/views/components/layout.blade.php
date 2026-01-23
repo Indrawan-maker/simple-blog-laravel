@@ -10,7 +10,7 @@
 <body>
 <x-navbar></x-navbar>
 <x-header>{{ $title }}</x-header>
-<main class="px-2 md:px-8">
+<main class="px-4 md:px-18 bg-gray-100">
     {{ $slot }}
 </main>
 </body>
