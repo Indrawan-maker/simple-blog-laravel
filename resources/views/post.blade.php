@@ -13,8 +13,9 @@
             </a>
         </div>
 
-        {{-- Article Header --}}
         <article>
+
+            {{-- Article Header --}}
             <header class="mb-8">
                 <h1 class="font-semibold text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight mb-4">
                     {{ $post['title'] }}
@@ -34,14 +35,15 @@
                     <img src="{{ asset('images/' . $post['gambar']) }}" 
                          alt="{{ $post['title'] }}"
                          class="w-full h-140 object-cover">
-                </div>
-            </figure>
+                        </div>
+                    </figure>
             <section class="max-w-4xl mx-auto">
                 <p class="text-gray-400">{{ $post['title'] }}</p>
-   <div class="prose prose-lg max-w-none">
-        {!! nl2br(e($post['body'])) !!}
-    </div>
+                <div class="prose prose-lg max-w-none">
+                    {!! nl2br(e($post['body'])) !!}
+                </div>
             </section>
+        </article>
             
 
         {{-- Related Articles (Optional) --}}
