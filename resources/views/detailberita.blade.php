@@ -5,7 +5,7 @@
         
         {{-- Breadcrumb / Back Button --}}
         <div class="mb-6">
-            <a href="/posts" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors">
+            <a href="/berita" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
@@ -25,7 +25,7 @@
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
-                    <time datetime="{{ $post['tanggal'] }}">{{ $post['tanggal'] }}</time>
+                    <time datetime="{{ $post->published_at->toIso8601String() }}">{{ $post->published_at->translatedFormat('j F Y') }}</time>
                 </div>
             </header>
 
@@ -36,6 +36,7 @@
                          alt="{{ $post['title'] }}"
                          class="w-full h-140 object-cover">
                         </div>
+                        <p>{{ $post->detail_gambar }} ini testing </p>
                     </figure>
             <section class="max-w-4xl mx-auto">
                 <p class="text-gray-400">{{ $post['title'] }}</p>

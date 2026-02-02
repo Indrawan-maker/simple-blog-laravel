@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model // tabel simple_blogs
+class Post extends Model
 {
 
-protected $table = 'simple_blogs';
+use HasFactory;
+protected $fillable = ['slug', 'title', 'gambar', 'detail_gambar', 'body', 'published_at'];
+
+protected $casts = ['published_at' => 'datetime'];
 }
