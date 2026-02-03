@@ -43,6 +43,7 @@
                             {{ $secondpost['title'] }}
                         </a>
                     </h2>
+                    
                     <div class="text-sm text-black font-extralight text-right mt-2">
                         {{ $secondpost->published_at->diffForHumans() }}
                     </div>
