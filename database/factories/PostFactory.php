@@ -24,7 +24,7 @@ class PostFactory extends Factory
             'title' => fake()->sentence(12),
             'author_id' => User::factory(),
             'gambar' => fake()->imageUrl(640, 480, 'business'),
-            'detail_gambar' => fake()->realText(3000),
+            'detail_gambar' => fake()->realText(300),
             'body' => fake()->paragraphs(5, true),
             'published_at' => fake()->dateTimeBetween('-1 year', 'now')
         ];

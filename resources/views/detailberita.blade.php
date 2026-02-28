@@ -29,6 +29,7 @@
                 </div>
             </header>
 
+
             {{-- Featured Image --}}
             <figure class="mb-8">
                 <div class="w-full max-w-5xl overflow-hidden rounded-lg shadow-lg">
@@ -45,7 +46,6 @@
                 </div>
             </section>
         </article>
-            
 
         {{-- Related Articles (Optional) --}}
         <div class="mt-12 pt-8 border-t border-gray-200">
