@@ -25,11 +25,11 @@
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
-                    <time datetime="{{ $post->published_at->toIso8601String() }}">{{ $post->published_at->translatedFormat('j F Y') }}</time>
+                    <time datetime="{{ $post->published_at->toIso8601String() }}">{{ $post->published_at->translatedFormat('j F Y') }} </time>
+                    <a href="/authors/{{ $post->author->name }}" class="hover:underline"> | {{ $post->author->name }} </a>
+                    <a href="/kategori/{{ $post->kategori->slug }}" class="hover:underline"> | {{ $post->kategori->name  }}</a>
                 </div>
             </header>
-
-
             {{-- Featured Image --}}
             <figure class="mb-8">
                 <div class="w-full max-w-5xl overflow-hidden rounded-lg shadow-lg">
@@ -40,14 +40,14 @@
                         <p>{{ $post->detail_gambar }} ini testing </p>
                     </figure>
             <section class="max-w-4xl mx-auto">
-                <p class="text-gray-400">{{ $post['title'] }}</p>
+                <p class="text-gray-400">{{ $post->title }}</p>
                 <div class="prose prose-lg max-w-none">
-                    {!! nl2br(e($post['body'])) !!}
+                    {!! nl2br(e($post->body)) !!}
                 </div>
             </section>
         </article>
 
-        {{-- Related Articles (Optional) --}}
+        {{-- Related Articles --}}
         <div class="mt-12 pt-8 border-t border-gray-200">
             <h3 class="text-2xl font-bold mb-6">Berita Terkait</h3>
             {{-- Bisa tambahin related posts di sini --}}
