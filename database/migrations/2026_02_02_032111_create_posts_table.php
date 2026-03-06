@@ -15,8 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('title');
-            $table->foreignId('author_id')->constrained('users');
-            $table->foreignId('kategori_id')->constrained('kategoris');
+            $table->foreignId('author_id')->constrained(
+                table : 'users',
+                indexName: 'posts_author_id'
+            );
+            $table->foreignId('kategori_id')->constrained(
+                table : 'kategoris',
+                indexName : 'posts_kategori_id'
+            );
             $table->string('gambar');
             $table->text('detail_gambar');
             $table->text('body');

@@ -29,9 +29,9 @@ Route::get('/berita/{post:slug}', function(Post $post) {
     ]);
 });
 
-Route::get('/authors/{user:name}', function(User $user) {
+Route::get('/authors/{user:username}', function(User $user) {
     return view('berita', [
-        'title' => 'Berita by' . $user->name,
+        'title' => count($user->posts) . ' Berita by ' . $user->name,
         'mainposts' => $user->posts,
         'secondposts' => collect()
     ]);
@@ -39,7 +39,7 @@ Route::get('/authors/{user:name}', function(User $user) {
 
 Route::get('/kategori/{kategori:slug}', function(Kategori $kategori) {
     return view('berita', [
-        'title' => 'Kategori berita ' . $kategori->name,
+        'title' => count($kategori->posts) . ' Kategori berita ' . $kategori->name,
         'mainposts' => $kategori->posts,
         'secondposts' => collect()
     ]);

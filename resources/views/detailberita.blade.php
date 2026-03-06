@@ -21,13 +21,22 @@
                     {{ $post['title'] }}
                 </h1>
                 
-                <div class="flex items-center text-gray-600 text-sm">
+                <div class="flex items-center text-sm">
+                    <span>by &nbsp;</span>
+                    <a href="/authors/{{ $post->author->username }}" class="text-gray-600 hover:underline">
+                         {{ $post->author->username }} &nbsp;
+                    </a>
+                    &nbsp;
+                    <span>in &nbsp;</span>
+                    <a href="/kategori/{{ $post->kategori->slug }}" class="text-gray-600 hover:underline">
+                        {{ $post->kategori->name  }} &nbsp;
+                    </a>
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
-                    <time datetime="{{ $post->published_at->toIso8601String() }}">{{ $post->published_at->translatedFormat('j F Y') }} </time>
-                    <a href="/authors/{{ $post->author->name }}" class="hover:underline"> | {{ $post->author->name }} </a>
-                    <a href="/kategori/{{ $post->kategori->slug }}" class="hover:underline"> | {{ $post->kategori->name  }}</a>
+                    <time datetime="{{ $post->published_at->toIso8601String() }}">
+                        {{ $post->published_at->translatedFormat('j F Y') }}
+                    </time>
                 </div>
             </header>
             {{-- Featured Image --}}
