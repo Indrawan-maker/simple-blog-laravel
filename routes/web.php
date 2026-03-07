@@ -39,7 +39,7 @@ Route::get('/authors/{user:username}', function(User $user) {
 
 Route::get('/kategori/{kategori:slug}', function(Kategori $kategori) {
     return view('berita', [
-        'title' => count($kategori->posts) . ' Kategori berita ' . $kategori->name,
+        'title' => count($kategori->posts) . ' Kategori berita dari ' . $kategori->name,
         'mainposts' => $kategori->posts,
         'secondposts' => collect()
     ]);
