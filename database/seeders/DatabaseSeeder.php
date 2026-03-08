@@ -17,20 +17,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = User::factory(4)->create([
-            'name' => 'admin',
-            'is_Admin' => true
-        ]);
 
 
         // User::factory(4)->create();
         // Kategori::factory(4)->create();
         // Post::factory(100)->create();
 
+        $this->call([KategoriSeeder::class, UserSeeder::class]);
         Post::factory(100)->recycle([
-            User::factory(3)->create(),
-            $admin, 
-            Kategori::factory(3)->create()
+            Kategori::all(),
+            User::all()
         ])->create();
     }
 

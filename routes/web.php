@@ -14,7 +14,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/berita', function (){
-    $posts = Post::all();
+    $posts = Post::latest()->get();
         return view('berita', [
             'title' => 'Blog',
             'mainposts' => $posts->take(3),

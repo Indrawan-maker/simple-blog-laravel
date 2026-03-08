@@ -15,6 +15,8 @@ protected $fillable = ['slug', 'title', 'author', 'kategori', 'gambar', 'detail_
 
 protected $casts = ['published_at' => 'datetime'];
 
+protected $with = ['author', 'kategori'];
+
 public function author() : BelongsTo
 {
     return $this->belongsTo(User::class);
