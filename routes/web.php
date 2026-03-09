@@ -14,11 +14,12 @@ Route::get('/about', function () {
 });
 
 Route::get('/berita', function (){
-    $posts = Post::latest()->get();
+    $posts = Post::searchFilter(request(['search']))->latest();
+
         return view('berita', [
             'title' => 'Blog',
-            'mainposts' => $posts->take(3),
-            'secondposts' => $posts->skip(3)
+            'mainposts' => $posts->take(3)->get(),
+            'secondposts' => $posts->skip(3)->get()
         ]);
 });
 

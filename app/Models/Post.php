@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -25,5 +26,13 @@ public function author() : BelongsTo
 public function kategori() : BelongsTo 
 {
 return $this->belongsTo(Kategori::class);
+}
+
+public function scopeSearchFilter(Builder $query, array $filters) : void
+{
+
+    $query->when(isset($filters['search']) ? $filters['search'] : false, fn($query, $search) =>
+        $query->where('title', 'like', '%' . $search . '%')
+    );
 }
 }
