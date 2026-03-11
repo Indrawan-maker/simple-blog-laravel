@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrasi</title>
+</head>
+<body>
+    <form action="POST" action="/register">
+        @csrf
+        <div>
+            <label for="">Nama</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label for="">Username</label>
+            <input type="text" name="username">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <label for="">Passowrd</label>
+            <input type="password" name="password">
+        </div>
+        <div>
+            <label for="">konfirmasi passowrd</label>
+            <input type="password" name="password_confirmation">
+        </div>
+
+        <button type="submit">daftar</button>
+
+
+    </form>
+</body>
+</html>

@@ -30,9 +30,19 @@ return $this->belongsTo(Kategori::class);
 
 public function scopeSearchFilter(Builder $query, array $filters) : void
 {
-
-    $query->when(isset($filters['search']) ? $filters['search'] : false, fn($query, $search) =>
+    $query->when(isset($filters['search']) ? $filters['search'] : false,
+        fn($query, $search) =>
         $query->where('title', 'like', '%' . $search . '%')
     );
+
+    $query->when(isset($filters['kategori']) ? $filters['kategori']: false,
+    fn($query, $kategori) =>
+    $query->whereHas('kategori', fn($query) => $query->where('slug', $kategori)
+    ));
+
+    $query->when(isset($filters['author']) ? $filters['author']: false,
+    fn($query, $author) =>
+    $query->whereHas('author', fn($query) => $query->where('username', $author)
+    ));
 }
 }

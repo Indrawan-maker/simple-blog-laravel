@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Models\Kategori;
 use App\Models\Post;
 use App\Models\User;
@@ -9,17 +10,19 @@ Route::get('/', function () {
     return view('welcome', ['title' => 'Homepage']);
 });
 
+Route::get('/register', [AuthController::class, 'register']);
+
+
 Route::get('/about', function () {
     return view('about', ['title' => 'About us']);
 });
 
 Route::get('/berita', function (){
-    $posts = Post::searchFilter(request(['search']))->latest();
-
+    $posts = Post::searchFilter(request(['search', 'kategori', 'author']))->latest()->get();
         return view('berita', [
             'title' => 'Blog',
-            'mainposts' => $posts->take(3)->get(),
-            'secondposts' => $posts->skip(3)->get()
+            'secondposts' => $posts->take(4),
+            'mainposts' => $posts->skip(4)->take(3)
         ]);
 });
 
@@ -33,7 +36,7 @@ Route::get('/berita/{post:slug}', function(Post $post) {
 Route::get('/authors/{user:username}', function(User $user) {
     return view('berita', [
         'title' => count($user->posts) . ' Berita by ' . $user->name,
-        'mainposts' => $user->posts,
+        'mainposts' => $user->posts()->latest()->paginate(6),
         'secondposts' => collect()
     ]);
 });
@@ -41,7 +44,7 @@ Route::get('/authors/{user:username}', function(User $user) {
 Route::get('/kategori/{kategori:slug}', function(Kategori $kategori) {
     return view('berita', [
         'title' => count($kategori->posts) . ' Kategori berita dari ' . $kategori->name,
-        'mainposts' => $kategori->posts,
+        'mainposts' => $kategori->posts()->latest()->paginate(6),
         'secondposts' => collect()
     ]);
 });

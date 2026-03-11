@@ -5,6 +5,12 @@
         Berita Utama
     </div>
     {{-- search start --}}
+    @if(request('kategori'))
+    <input type="hidden" name="kategori" value="{{ request('kategori') }}">
+    @endif
+    @if(request('author'))
+    <input type="hidden" name="author" value="{{ request('author') }}">
+    @endif
     <form action="/berita" method="GET" class="flex justify-end">
         <div class="join">
             <div>
@@ -45,6 +51,9 @@
         @endforeach
 
     </section>
+                @if(method_exists($mainposts, 'links'))
+    {{ $mainposts->links() }}
+@endif
     {{-- berita tefbaru --}}
     @if ($secondposts->isNotEmpty())
 
@@ -73,7 +82,6 @@
                     </div>
                 </article>
             @endforeach
-
         </section>
     @endif
 </x-layout>
