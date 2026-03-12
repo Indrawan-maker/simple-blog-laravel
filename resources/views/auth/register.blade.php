@@ -7,7 +7,7 @@
     <title>Registrasi</title>
 </head>
 <body>
-    <form action="POST" action="/register">
+    <form method="POST" action="/register">
         @csrf
         <div>
             <label for="">Nama</label>

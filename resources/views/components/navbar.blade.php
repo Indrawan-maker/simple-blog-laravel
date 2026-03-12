@@ -31,7 +31,10 @@
             <span class="badge">New</span>
           </a>
         </li>
-        <li><a>Logout</a></li>
+        <form method="POST" action="/logout">
+          @csrf
+          <li><button type="submit">Logout</button></li>
+        </form>
       </ul>
     </div>
   </div>

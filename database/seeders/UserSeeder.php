@@ -15,7 +15,6 @@ class UserSeeder extends Seeder
     {
         User::factory(4)->create([
             'name' => 'admin',
-            'is_Admin' => true
         ]);
                   User::factory(3)->create();
     }
