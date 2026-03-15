@@ -11,7 +11,7 @@
 <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
 <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
   </ul>
-
+ 
   <!-- Avatar / Dropdown kanan -->
   <div class="flex-1 flex justify-end">
     <div class="dropdown dropdown-end">
